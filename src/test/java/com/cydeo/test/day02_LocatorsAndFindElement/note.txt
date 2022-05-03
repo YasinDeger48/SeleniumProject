@@ -1,0 +1,144 @@
+What is selenium?
+- Selenium automated browsers.
+- Basically Selenium is a bunch of jar files that allows to automate browsers.
+
+What is Maven?
+- Maven is a build automation tool.
+
+What is a build?
+- Build is repeating steps when creating the projects.
+- Also includes the repeating steps when managing the project as well.
+
+    -src
+        -main
+        -test
+    -pom.xml
+
+What is POM.xml file? (read like pom ex em el--> not read dot)
+- its short for project object model.
+- most important file in the maven project.
+- We manage (add,remove,change version of) out dependencies.
+
+Is maven for testers?
+- Maven is a tool for creating developers.
+- as Testers we will take advantage of some of functionalities.
+
+What version of Selenium we are using?
+- 3.141.59
+
+What version of WebDriverManager we are using?
+- 5.0.3 (BonnieGarcia)
+
+If the developers are using both main and test folders, which folder the testers use?
+- Normally main side used developers
+- Testers and developers are not working on the same project.
+- As testers you will not have access to the source code.
+
+What is a dependencies?
+- Just a jar files.
+- We add to pom.xml file and maven automatically downloads the version of the depencdencies we provide.
+
+Where do we get our expected data?
+- Requirement documents.
+
+Where do we get actual the data/result?
+-  Comes from the browser. When we do our testing, we get actual data from browser.
+
+------------------------------------------------------------------------
+
+- To be able to any action of any web element , there are centain steps we have to follow.
+
+* we have to locate the web element we want to work on.
+* to locate we have to use a set of methods coming from selenium lib.
+ - find element
+ - locator methods
+* we decide waht action we want to apply, find the method and use it on the already located web element.
+- click
+
+findElement(LOCATOR) method:
+- this methods finds and returns SINGLE web element.
+- it accepts a locator argument, and finds the request web element using locator.
+- return type : web element type (comes from selenium library)
+- It will throw "NoSuchElementException" ------  - - - - -- - - - - --  -- - - -
+Bu hatayı vermenin iki nedeni var. There are 2 reasons it gives that error.
+ - 1# if you provide a wrong locator
+ - 2# if your page does not load as fast as it should
+
+- What is a locator?
+-  The locators help us locate web elements using Selenium Webdriver.
+-  Locators are basically 8 methods coming from selenium
+
+- there are total of 8 locators.
+- we will learn first 6 today.
+
+1# linkText
+- linktext locator will look through the TEXTSOF all the links in the page, and return the matching link.
+- this locator will only works on links. <a> tags only
+
+   - partialLinkText
+
+2#name
+
+- it uses "name" attirubutes value to locate web element
+- name does not have to be unique (başka aynı name e sahip elementler de olabilir.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
