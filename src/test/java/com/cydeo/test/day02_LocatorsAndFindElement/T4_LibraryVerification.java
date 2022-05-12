@@ -1,5 +1,7 @@
 package com.cydeo.test.day02_LocatorsAndFindElement;
 
+import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +12,7 @@ public class T4_LibraryVerification {
 
     public static void main(String[] args) throws InterruptedException {
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
         driver.get("https://library2.cybertekschool.com/login.html");
@@ -29,7 +30,9 @@ public class T4_LibraryVerification {
         Thread.sleep(1000);
         clickButton.click();
 
-        WebElement isShow = driver.findElement(By.xpath("//div[3]"));
+        WebElement isShow = driver.findElement(By.cssSelector("#login-form > div:nth-child(2) > div"));
+
+        HandleWait.wait(2);
 
         if(isShow.isDisplayed()){
             System.out.println("Message is displayed on the screen");
