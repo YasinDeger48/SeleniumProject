@@ -1,6 +1,6 @@
 package com.cydeo.oscarReview.review02;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.Wait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,16 +14,16 @@ public class TaskSony {
         driver.get("https://www.demoblaze.com/index.html");
 
         driver.manage().window().maximize();
-        HandleWait.wait(2);
+        Wait.wait(2);
         WebElement laptopTab = driver.findElement(By.linkText("Laptops"));
 
         laptopTab.click();
-        HandleWait.wait(2);
+        Wait.wait(2);
 
         WebElement sony_vaio_i5 = driver.findElement(By.linkText("Sony vaio i5"));
 
         sony_vaio_i5.click();
-        HandleWait.wait(2);
+        Wait.wait(2);
 
         WebElement priceCheck = driver.findElement(By.className("price-container"));
 

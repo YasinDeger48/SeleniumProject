@@ -1,6 +1,6 @@
 package com.cydeo.utilities;
 
-public class HandleWait {
+public class Wait {
 
     public static void wait(int second){
 

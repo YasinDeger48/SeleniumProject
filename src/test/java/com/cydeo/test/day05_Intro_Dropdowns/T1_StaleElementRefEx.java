@@ -1,6 +1,6 @@
 package com.cydeo.test.day05_Intro_Dropdowns;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.Wait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -22,7 +22,7 @@ public class T1_StaleElementRefEx {
 
         WebElement addButton = driver.findElement(By.xpath("//button[@onclick='addElement()']"));
 
-        HandleWait.wait(2);
+        Wait.wait(2);
         addButton.click();
 
         WebElement deleteButton = driver.findElement(By.xpath("//button[@onclick='deleteElement()']"));

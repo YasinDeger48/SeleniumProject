@@ -1,6 +1,6 @@
 package com.cydeo.oscarReview.review03;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.Wait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -27,17 +27,17 @@ public class MethodExample {
         String toDoString = "this todo is exciting";
 
         WebElement element1 = driver.findElement(By.xpath("//input[@id='new-todo']"));
-        HandleWait.wait(1);
+        Wait.wait(1);
         element1.sendKeys(toDoString + Keys.ENTER);
-        HandleWait.wait(1);
+        Wait.wait(1);
 
 
 
         //driver.navigate().back();
-        HandleWait.wait(2);
+        Wait.wait(2);
 
         //getTab("JavaScript");
-        HandleWait.wait(2);
+        Wait.wait(2);
 
         driver.quit();
     }

@@ -1,6 +1,6 @@
 package com.cydeo.test.day05_Intro_Dropdowns;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.Wait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ public class T2_RadioButtonHandling {
         driver.get("https://practice.cydeo.com/radio_buttons");
 
         WebElement hockeyElement = driver.findElement(By.xpath("//input[@id='hockey']"));
-        HandleWait.wait(2);
+        Wait.wait(2);
         hockeyElement.click();
 
         if (hockeyElement.isSelected()) {
