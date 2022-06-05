@@ -82,6 +82,10 @@ public class Driver {
 
     }
 
+    public static void stopSession(){
+        getDriver().quit();
+    }
+
 
 
 
