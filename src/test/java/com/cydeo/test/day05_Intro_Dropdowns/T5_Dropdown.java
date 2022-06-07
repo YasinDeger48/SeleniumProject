@@ -1,11 +1,12 @@
 package com.cydeo.test.day05_Intro_Dropdowns;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -72,7 +73,7 @@ public class T5_Dropdown {
         dropDown.selectByValue(caliValue);
         testCounter++;
 
-        Wait.wait(5);
+        BrowserUtils.sleep(5);
 
 
         WebElement verify = dropDown.getFirstSelectedOption();

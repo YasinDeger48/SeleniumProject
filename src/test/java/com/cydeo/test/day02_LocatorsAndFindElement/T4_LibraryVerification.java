@@ -1,10 +1,11 @@
 package com.cydeo.test.day02_LocatorsAndFindElement;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 
 public class T4_LibraryVerification {
 
@@ -31,7 +32,7 @@ public class T4_LibraryVerification {
 
         WebElement isShow = driver.findElement(By.cssSelector("#login-form > div:nth-child(2) > div"));
 
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         if(isShow.isDisplayed()){
             System.out.println("Message is displayed on the screen");

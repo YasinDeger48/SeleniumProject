@@ -1,11 +1,12 @@
 package com.cydeo.myExamples.automationExerciseCom;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -54,7 +55,7 @@ public class TestCase2 {
     public void selectCheckBox(){
         WebElement willDelete = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_orderGrid_ctl04_OrderSelector']"));
         willDelete.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
     }
 
     @Test(priority = 4)
@@ -63,7 +64,7 @@ public class TestCase2 {
         WebElement Delete = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_btnDelete']"));
 
         Delete.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
     }
 
@@ -118,11 +119,11 @@ public class TestCase2 {
         Select select = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         List<WebElement> options = select.getOptions();
         select.selectByValue("ScreenSaver");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         WebElement quantity = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
 
         quantity.sendKeys("10");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         double quantityValue = Double.parseDouble(quantity.getAttribute("value"));
 
@@ -133,7 +134,7 @@ public class TestCase2 {
 
         WebElement calculateButton = driver.findElement(By.xpath("(//input[@class='btn_dark'])[1]"));
         calculateButton.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
 
         WebElement total = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtTotal"));

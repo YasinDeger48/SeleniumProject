@@ -1,11 +1,12 @@
 package com.cydeo.test.day05_Intro_Dropdowns;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -38,17 +39,17 @@ public class T8_MultipleSelect {
 
         // Select all the options from multiple select dropdown.
         multipleDropDown.selectByIndex(0);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.selectByValue("js");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.selectByVisibleText("C#");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.selectByIndex(3);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.selectByValue("ruby");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.selectByVisibleText("C");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         // Print out all selected values.
         for (WebElement each : allOptions) {
@@ -60,17 +61,17 @@ public class T8_MultipleSelect {
 
         // Deselect all values.
         multipleDropDown.deselectByIndex(0);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.deselectByIndex(1);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.deselectByIndex(2);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.deselectByIndex(3);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.deselectByIndex(4);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         multipleDropDown.deselectByIndex(5);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
 
 

@@ -1,10 +1,11 @@
 package com.cydeo.test.day06_alerts_IFrame_windows;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,12 +25,12 @@ public class DropDownPractice {
 
 
         //Select Illinois
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         dropdown.selectByVisibleText("Illinois");
         //Select VA (Virginia) with the value of attribute
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         dropdown.selectByValue("VA");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         dropdown.selectByIndex(5);
 
 

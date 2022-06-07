@@ -1,10 +1,11 @@
 package com.cydeo.oscarReview.review02;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 
 public class TaskSony {
     public static void main(String[] args) {
@@ -14,16 +15,16 @@ public class TaskSony {
         driver.get("https://www.demoblaze.com/index.html");
 
         driver.manage().window().maximize();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         WebElement laptopTab = driver.findElement(By.linkText("Laptops"));
 
         laptopTab.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement sony_vaio_i5 = driver.findElement(By.linkText("Sony vaio i5"));
 
         sony_vaio_i5.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement priceCheck = driver.findElement(By.className("price-container"));
 

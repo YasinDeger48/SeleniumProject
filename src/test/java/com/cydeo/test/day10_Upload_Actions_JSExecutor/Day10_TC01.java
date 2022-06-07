@@ -1,8 +1,8 @@
 package com.cydeo.test.day10_Upload_Actions_JSExecutor;
 
-import com.cydeo.myExamples.automationExerciseCom.TechTask.util.ConfigFileReader;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.Driver;
-import com.cydeo.utilities.Wait;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,21 +10,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class TC01 {
+public class Day10_TC01 {
     Faker faker = new Faker(new Locale("en"));
     SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
     @Test
     public void test1(){
 
-        Driver.getDriver().get(ConfigFileReader.getProperty("registration.from.url"));
+        Driver.getDriver().get(ConfigReader.getProperty("registration.from.url"));
         WebElement firstName = Driver.getDriver().findElement(By.cssSelector("input[name='firstname']"));
         firstName.sendKeys(faker.name().firstName(), Keys.TAB, faker.name().lastName(),Keys.TAB,faker.bothify("????????##"),Keys.TAB,
-                faker.internet().emailAddress(),Keys.TAB,faker.internet().password(),Keys.TAB,faker.numerify("571-###-####"),Keys.TAB);
+                faker.internet().emailAddress(),Keys.TAB,faker.internet().password(),Keys.TAB,faker.numerify("###-###-####"),Keys.TAB);
 
         WebElement genderSelect = Driver.getDriver().findElement(By.xpath("(//div[@class='radio']//input)[1]"));
         genderSelect.click();
@@ -42,14 +41,14 @@ public class TC01 {
         Driver.getDriver().findElement(By.id("wooden_spoon")).click();
 
 
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement wellDoneElement = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-success']//p"));
         String actualText = wellDoneElement.getText();
         String expectedText = "You've successfully completed registration!";
 
         Assert.assertTrue(actualText.equals(expectedText),"Actual test is not matching with the expected text");
-        System.out.println("Test completed...");
+
         Driver.stopSession();
     }
 

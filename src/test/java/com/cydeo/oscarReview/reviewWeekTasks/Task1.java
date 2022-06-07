@@ -1,12 +1,12 @@
 package com.cydeo.oscarReview.reviewWeekTasks;
 
-import com.cydeo.utilities.Driver;
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,14 +37,14 @@ public class Task1 {
 
         //            2.	Search for "hats for men" (Call from Configuration.properties file)
         WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         searchBox.sendKeys("hats for men" + Keys.ENTER);
 
         //            3.	Add the first hat appearing to Cart with quantity 2
         WebElement firstElement = driver.findElement(By.xpath("(//div[@class='a-section a-spacing-base'])[1]"));
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         firstElement.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         //            4.	Open cart and assert that the total price and quantity are correct
 
@@ -52,7 +52,7 @@ public class Task1 {
         quantitySelect.click();
 
         driver.findElement(By.id("quantity_1")).click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         driver.findElement(By.id("add-to-cart-button")).click();
 
         driver.findElement(By.xpath("(//span[@class='a-button-inner'])[2]")).click();
@@ -64,7 +64,7 @@ public class Task1 {
         //5.	Reduce the quantity from 2 to 1 in Cart for the item selected in the step 3
 
         driver.findElement(By.id("quantity_1")).click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
 
         WebElement itemNumber = driver.findElement(By.xpath("//span[@id='sc-subtotal-label-buybox']"));
@@ -91,7 +91,7 @@ public class Task1 {
         //5.	Reduce the quantity from 2 to 1 in Cart for the item selected in the step 3
 
         driver.findElement(By.id("quantity_1")).click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         //            6.	Assert that the total price and quantity has been correctly changed
 

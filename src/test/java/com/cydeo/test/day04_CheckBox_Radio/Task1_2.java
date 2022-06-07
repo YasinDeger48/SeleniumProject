@@ -1,10 +1,11 @@
 package com.cydeo.test.day04_CheckBox_Radio;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 
 public class Task1_2 {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Task1_2 {
         driver.manage().window().maximize();
 
         driver.get("https://practice.cydeo.com/forgot_password");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
 
         // a.home link

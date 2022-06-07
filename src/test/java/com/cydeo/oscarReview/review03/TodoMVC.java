@@ -1,11 +1,12 @@
 package com.cydeo.oscarReview.review03;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 
 public class TodoMVC {
 
@@ -14,16 +15,16 @@ public class TodoMVC {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
         driver.get("https://todomvc.com");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         driver.navigate().to("https://todomvc.com/examples/react/#/");
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         WebElement element = driver.findElement(By.className("new-todo"));
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         element.sendKeys("Keys"+ Keys.ENTER);
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
 
 

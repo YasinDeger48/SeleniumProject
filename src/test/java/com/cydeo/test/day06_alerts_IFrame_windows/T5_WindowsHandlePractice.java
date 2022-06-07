@@ -40,7 +40,8 @@ public class T5_WindowsHandlePractice {
         String expectedTitle = "Windows";
         String actualTitle = driver.getTitle();
 
-        Assert.assertEquals(actualTitle,expectedTitle,"these are not same (actual title = expected title)");
+        //Assert.assertEquals(actualTitle,expectedTitle,"these are not same (actual title = expected title)");
+        Assert.assertTrue(actualTitle.equals(expectedTitle),"these are not same (actual title = expected title)");
 
         System.out.println("Title before click: " + actualTitle);
         //Click to : ClickHere link

@@ -79,11 +79,30 @@ public class Driver {
 
         return driver;
 
-
+    }
+    //This method will make sure our driver value is always null after using quit() method
+    public static void closeDriver(){
+        if(driver != null){
+            driver.quit(); // this line will terminate the existing session value will not even ben null
+            //driver quit diyince session kill yapılıyor. yeni driver ı tanımlamak lazım. onu null olarak tanımlıyoruz.
+            driver = null; //bunu koymazsak sonrasındaki testleri görmez null hatası verir. null verip driver i sıfırlamak zorundayız.
+        }
     }
 
+
     public static void stopSession(){
-        getDriver().quit();
+        if(driver!=null){
+            getDriver().quit();
+            driver=null;
+        }
+    }
+
+    public static void wait(int seconds){
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+
+        }
     }
 
 

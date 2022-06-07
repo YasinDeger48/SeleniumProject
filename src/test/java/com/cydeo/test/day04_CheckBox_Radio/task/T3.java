@@ -1,10 +1,11 @@
 package com.cydeo.test.day04_CheckBox_Radio.task;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,13 +20,13 @@ public class T3 {
 
         WebElement button1 = driver.findElement(By.xpath("//button[@onclick='button1()']"));
         WebElement textResult = driver.findElement(By.xpath("//p[@id='result']"));
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         button1.click();
 
         String expectedResult = "Clicked on button one!";
         String actualResult = textResult.getText();
         String result = (actualResult.equals(expectedResult) && textResult.isDisplayed())? "Text is verified" : "Text is not verified";
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         System.out.println(result);
 
         driver.quit();

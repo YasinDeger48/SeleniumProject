@@ -1,11 +1,12 @@
 package com.cydeo.test.day06_alerts_IFrame_windows;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,12 +35,12 @@ public class T1_AlertPractices {
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         //WebElement informationAlertButton = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
         informationAlertButton.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         //Click the OK button from the alert
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
         WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
         boolean resultTextIsDisplayed = resultText.isDisplayed();
@@ -53,19 +54,19 @@ public class T1_AlertPractices {
     public void alert_test2(){
         WebElement confirmationAlertButton = driver.findElement(By.xpath("//button[@onclick='jsConfirm()']"));
         confirmationAlertButton.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
         String expectedTextCon = "You clicked: Ok";
         String actualTextCon = resultText.getText();
         Assert.assertEquals(actualTextCon,expectedTextCon,"Result is not matching");
         confirmationAlertButton = driver.findElement(By.xpath("//button[@onclick='jsConfirm()']"));
         confirmationAlertButton.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         alert.dismiss();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         resultText = driver.findElement(By.xpath("//p[@id='result']"));
         String expectedTextConDis = "You clicked: Cancel";
         String actualTextConDis = resultText.getText();
@@ -76,11 +77,11 @@ public class T1_AlertPractices {
     public void alert_test3(){
         WebElement confirmationAlertButton = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
         confirmationAlertButton.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
         Alert alert = driver.switchTo().alert();
         alert.sendKeys("hello");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         alert.accept();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
     }
 }

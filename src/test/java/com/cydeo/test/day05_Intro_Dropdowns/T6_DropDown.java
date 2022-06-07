@@ -1,10 +1,11 @@
 package com.cydeo.test.day05_Intro_Dropdowns;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,7 +33,7 @@ public class T6_DropDown {
 
         Select year = new Select(driver.findElement(By.xpath("//select[@id='year']")));
         year.selectByVisibleText("1923");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
     }
 
@@ -41,7 +42,7 @@ public class T6_DropDown {
 
         Select month = new Select(driver.findElement(By.xpath("//select[@id='month']")));
         month.selectByValue("11");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
     }
 
@@ -50,7 +51,7 @@ public class T6_DropDown {
 
         Select day = new Select(driver.findElement(By.xpath("//select[@id='day']")));
         day.selectByIndex(1);
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
     }
 
@@ -70,7 +71,7 @@ public class T6_DropDown {
         } else {
             System.out.println("Date verifying FAILED!");
         }
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
     }
 
 

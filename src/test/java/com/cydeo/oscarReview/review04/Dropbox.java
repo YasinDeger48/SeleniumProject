@@ -1,15 +1,13 @@
 package com.cydeo.oscarReview.review04;
 
-import com.cydeo.utilities.Wait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
-import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 
-import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 public class Dropbox {
@@ -39,13 +37,13 @@ public class Dropbox {
         WebElement passWord = driver.findElement(By.xpath("//input[@name='ctl00$MainContent$password']"));
 
         userName.sendKeys("Tester");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         passWord.sendKeys("test" + Keys.ENTER);
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement checkAll = driver.findElement(By.id("ctl00_MainContent_btnCheckAll"));
         checkAll.click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement ch1 = driver.findElement(By.xpath("//input[@name='ctl00$MainContent$orderGrid$ctl02$OrderSelector']"));
         WebElement ch2 = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_orderGrid_ctl03_OrderSelector']"));
@@ -64,7 +62,7 @@ public class Dropbox {
         }
 
         driver.findElement(By.id("ctl00_MainContent_btnUncheckAll")).click();
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement ch11 = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_orderGrid_ctl02_OrderSelector']"));
         WebElement ch12 = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_orderGrid_ctl03_OrderSelector']"));
@@ -89,9 +87,9 @@ public class Dropbox {
         WebElement passWord1 = driver.findElement(By.xpath("//input[@name='ctl00$MainContent$password']"));
 
         userName1.sendKeys("Tester");
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
         passWord1.sendKeys("test" + Keys.ENTER);
-        Wait.wait(2);
+        BrowserUtils.sleep(2);
 
         WebElement deletePerson = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_orderGrid_ctl03_OrderSelector']"));
 
@@ -99,7 +97,7 @@ public class Dropbox {
 
         WebElement deleteButton = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_btnDelete']"));
         deleteButton.click();
-        Wait.wait(1);
+        BrowserUtils.sleep(1);
 
 
         if(!(driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_orderGrid\"]/tbody/tr[3]/td[2]")).isDisplayed())){
