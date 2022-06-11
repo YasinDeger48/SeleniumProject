@@ -66,11 +66,11 @@ public class ETS_Tur {
         executor4.executeScript("document.getElementById('cb-termPrivacy').style.display='block';");
         Driver.getDriver().findElement(By.cssSelector("input#cb-termPrivacy.custom-control-input")).click();*/
 
-        //String cssPath = "#cb-termPrivacy";
-        //((JavascriptExecutor)Driver.getDriver()).executeScript("document.querySelector(arguments[0],':before').click();",cssPath);
+        String locate = "#cb-termPrivacy";
+        ((JavascriptExecutor)Driver.getDriver()).executeScript("document.querySelector(arguments[0],':before').click();",locate);
 
-        WebElement checkbox = Driver.getDriver().findElement(By.tagName("input"));
-        actions.moveToElement(checkbox).click().build().perform();
+        //WebElement checkbox = Driver.getDriver().findElement(By.tagName("input"));
+        //actions.moveToElement(checkbox).click().build().perform();
 
 
         BrowserUtils.sleep(5);

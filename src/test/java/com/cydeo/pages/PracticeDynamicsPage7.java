@@ -5,17 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PracticeDynamicsPage {
+public class PracticeDynamicsPage7 {
 
 
-    public PracticeDynamicsPage(){
+    public PracticeDynamicsPage7(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//div[@id='alert']//strong")
-    public WebElement doneText;
+    @FindBy(xpath = "//strong[.='Done!']")
+    public WebElement doneMessage;
 
-    @FindBy(xpath = "//img[@class='rounded mx-auto d-block']")
-    public WebElement image;
+    @FindBy(xpath = "//img[@alt='square pants']")
+    public WebElement spongeBobImage;
 }
